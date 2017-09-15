@@ -1,0 +1,9 @@
+# This is DisplayLink workaround conf file.
+# This file is not acting as conf itself. Instead, a .conf symlink targeting to this file is created when needed.
+# See https://github.com/Ashark/DisplayLink-switch for more information
+
+# workaround 1
+Section "Device"
+   Identifier "Intel Graphics"
+   Driver "intel"
+EndSection

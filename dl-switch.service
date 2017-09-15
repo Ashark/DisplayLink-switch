@@ -1,0 +1,16 @@
+# Version 1
+[Unit]
+Description=Switch between optimus and displaylink modes
+Before=graphical.target
+
+[Service]
+Type=oneshot
+RemainAfterExit=yes
+ExecStart=/usr/bin/ln -sf /usr/share/X11/xorg.conf.d/displaylink-workaround1 /usr/share/X11/xorg.conf.d/20-displaylink.conf
+ExecStop=/usr/bin/ln -sf /dev/null /usr/share/X11/xorg.conf.d/20-displaylink.conf
+
+User=root
+Group=root
+
+[Install]
+WantedBy=graphical.target
